@@ -1,0 +1,18 @@
+{
+  "event_key": "ercot_eea2_2023_09_06",
+  "description": "ERCOT Energy Emergency Alert Level 2 event on September 6, 2023.",
+  "artifacts": [
+    {
+      "source_system": "ercot",
+      "source_dataset": "event_documents",
+      "artifact_type": "regulatory_order_pdf",
+      "canonical_source_key": "doe_order_202_23_1_ercot_2023_09_07",
+      "title": "DOE Order No. 202-23-1 for ERCOT September 2023 emergency",
+      "source_url": "https://www.ercot.com/files/docs/2023/09/07/202%28c%29%20Order%20-%2009072023%20%28ERCOT%29%20-%20Signed%20by%20Secretary%20Granholm%20-%209-07-23.pdf",
+      "market": "ERCOT",
+      "utility": null,
+      "reporting_period": "2023-09-07",
+      "published_at": "2023-09-07"
+    }
+  ]
+}

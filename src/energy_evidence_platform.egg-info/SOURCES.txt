@@ -1,0 +1,9 @@
+pyproject.toml
+src/energy_evidence/__init__.py
+src/energy_evidence/ingestion/__init__.py
+src/energy_evidence/ingestion/cli.py
+src/energy_evidence_platform.egg-info/PKG-INFO
+src/energy_evidence_platform.egg-info/SOURCES.txt
+src/energy_evidence_platform.egg-info/dependency_links.txt
+src/energy_evidence_platform.egg-info/entry_points.txt
+src/energy_evidence_platform.egg-info/top_level.txt

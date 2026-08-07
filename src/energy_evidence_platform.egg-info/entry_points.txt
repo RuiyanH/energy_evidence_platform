@@ -1,0 +1,2 @@
+[console_scripts]
+energy-evidence = energy_evidence.ingestion.cli:main
