@@ -1,6 +1,5 @@
 import argparse
-import json
-from pathlib import Path
+from energy_evidence.ingestion.contracts import load_event_contract
 
 def main(): 
     parser = argparse.ArgumentParser()
@@ -12,8 +11,7 @@ def main():
     args = parser.parse_args()
 
     if args.command == "read-contract":
-        event_path = Path(args.event)
-        event = json.loads(event_path.read_text())
+        event = load_event_contract(args.event)
 
         print(f"Event: {event['event_key']}")
         print(f"Description: {event['description']}")
@@ -26,4 +24,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
