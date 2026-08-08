@@ -5,7 +5,7 @@ import argparse
 from energy_evidence.ingestion.contracts import load_event_contract
 from energy_evidence.ingestion.download import download_url
 from energy_evidence.ingestion.hashing import sha256_bytes
-
+from energy_evidence.ingestion.storage import save_raw_bytes
 
 def main(): 
     parser = argparse.ArgumentParser()
@@ -16,6 +16,8 @@ def main():
 
     download = subparsers.add_parser("download")
     download.add_argument("--url", required = True)
+    download.add_argument("--data-root", default = "data")
+    download.add_argument("--file-extension", default = ".bin")
 
     args = parser.parse_args()
 
@@ -34,8 +36,16 @@ def main():
     if args.command == "download":
         body = download_url(args.url)
         content_hash = sha256_bytes(body)
+        output_path = save_raw_bytes(
+            data_root=args.data_root,
+            content_hash=content_hash,
+            content=body,
+            file_extension=args.file_extension
+        )
+
         print(f"Downloaded {len(body)} bytes")
         print(f"SHA256: {content_hash}")
+        print(f"Saved to: {output_path}")
 
 if __name__ == "__main__":
     main()
