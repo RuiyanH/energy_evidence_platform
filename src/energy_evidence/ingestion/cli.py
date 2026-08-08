@@ -4,6 +4,8 @@ Command line interface for the ingestion module.
 import argparse
 from energy_evidence.ingestion.contracts import load_event_contract
 from energy_evidence.ingestion.download import download_url
+from energy_evidence.ingestion.hashing import sha256_bytes
+
 
 def main(): 
     parser = argparse.ArgumentParser()
@@ -31,7 +33,9 @@ def main():
 
     if args.command == "download":
         body = download_url(args.url)
+        content_hash = sha256_bytes(body)
         print(f"Downloaded {len(body)} bytes")
+        print(f"SHA256: {content_hash}")
 
 if __name__ == "__main__":
     main()

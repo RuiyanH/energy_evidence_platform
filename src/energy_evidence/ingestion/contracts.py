@@ -28,10 +28,10 @@ def validate_event_contract(event: dict) -> None:
         if key not in event:
             raise ValueError(f"Missing required event key: {key}")
 
-        if not isinstance(event["artifacts"], list): 
-            raise ValueError("Event 'artifacts' must be a list")
+    if not isinstance(event["artifacts"], list): 
+        raise ValueError("Event 'artifacts' must be a list")
 
-        for artifact in event["artifacts"]:
-            for artifact_key in REQUIRED_ARTIFACT_KEYS:
-                if artifact_key not in artifact:
-                    raise ValueError(f"Missing required artifact key: {artifact_key}")
+    for artifact in event["artifacts"]:
+        for artifact_key in REQUIRED_ARTIFACT_KEYS:
+            if artifact_key not in artifact:
+                raise ValueError(f"Missing required artifact key: {artifact_key}")
